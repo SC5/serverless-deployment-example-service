@@ -1,0 +1,19 @@
+{
+  "name": "serverless-deployment-example-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SC5/serverless-deployment-example-service.git"
+  },
+  "author": "Eetu Tuomala",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SC5/serverless-deployment-example-service/issues"
+  },
+  "homepage": "https://github.com/SC5/serverless-deployment-example-service#readme"
+}
