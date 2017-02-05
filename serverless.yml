@@ -20,6 +20,9 @@ service: example-service
 provider:
   name: aws
   runtime: nodejs4.3
+  environment:
+    SECRET: ${env:SECRET, self:custom.ansible.environment.SECRET}
+
 
 # you can overwrite defaults here
 #  stage: dev
@@ -55,7 +58,7 @@ provider:
 
 functions:
   hello:
-    handler: handler.hello
+    handler: hello/handler.hello
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
@@ -76,9 +79,25 @@ functions:
 #    environment:
 #      variable2: value2
 
+plugins:
+  - serverless-ansible-build-plugin # Plugin for creating j2 template
+
+custom:
+  # serverless-ansible-build-plugin variables
+  ansible:
+    buildDirectory: ".ansible"
+    region: "{{ region }}"
+    stage: "{{ stage }}"
+    artifactPath: "{{ artifact_path }}"
+    environment:
+      SECRET: "{{ secret }}"
+
+
 # you can add CloudFormation resource templates here
-#resources:
-#  Resources:
+resources:
+  Description: "${self:provider.stage} stack"
+  #Resources:
+
 #    NewResource:
 #      Type: AWS::S3::Bucket
 #      Properties:
