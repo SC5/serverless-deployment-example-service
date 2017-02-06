@@ -95,7 +95,7 @@ custom:
 
 # you can add CloudFormation resource templates here
 resources:
-  Description: "${self:service} [${self:provider.stage}] stack"
+  Description: "${self:service} stack"
   #Resources:
 
 #    NewResource:
