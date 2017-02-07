@@ -50,7 +50,7 @@ if [ -d "$DIRECTORY" ]; then rm $DIRECTORY/* ; fi && \
 sls deploy --ansible && \
 [[ $CREATE_PACKAGE -eq true ]] || \
 {
-  tar -zcf $DIRECTORY/$TAR_NAME $DIRECTORY/$SERVICE.zip $DIRECTORY/$SERVICE.json.j2 ; \
+  tar -zcf $DIRECTORY/$TAR_NAME -C $DIRECTORY $SERVICE.zip $SERVICE.json.j2 ; \
   echo Serverless Ansible Build Plugin: $DIRECTORY/$TAR_NAME created. ;
 }"
 
