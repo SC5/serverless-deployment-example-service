@@ -12,4 +12,4 @@ Here is the deployment flow in short:
 2. Copy .j2 template and zip to Artifactory/S3 or where ever you wish.
 3. Ansible playbook downloads template and deploys CloudFormation stack and functions zip to AWS.
 
-More detailled instructions will be available in [serverless-deployment-ansible](https://github.com/SC5/serverless-deployment-ansible).
+More detailed instructions will be available in [serverless-deployment-ansible](https://github.com/SC5/serverless-deployment-ansible).
