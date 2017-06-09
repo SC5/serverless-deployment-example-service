@@ -3,6 +3,6 @@ ARTIFACTS_BUCKET = "my-artifacts-bucket"
 SERVICE = "example-service"
 node {
     stage('temp') {
-        sh "ls -la"
+        sh "cd .. && ls -la"
     }
 }
